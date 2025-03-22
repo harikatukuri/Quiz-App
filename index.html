@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
+    <div class="container">
+
+        <!-- Subject Selection Section -->
+        <div id="subjectSelection">
+            <h2>Select Subject</h2>
+            <button onclick="selectSubject('generalKnowledge')">General Knowledge</button>
+            <button onclick="selectSubject('mathematics')">Mathematics</button>
+            <button onclick="selectSubject('science')">Science</button>
+            <button onclick="selectSubject('literature')">Literature</button>
+            <button onclick="selectSubject('history')">History</button>
+            <button onclick="selectSubject('sports')">Sports</button>
+            <button onclick="selectSubject('geography')">Geography</button>
+        </div>
+
+        <!-- Difficulty Selection Section -->
+        <div id="difficultySelection" style="display: none;">
+            <h2>Select Difficulty</h2>
+            <button onclick="startQuiz('easy')">Easy</button>
+            <button onclick="startQuiz('medium')">Medium</button>
+            <button onclick="startQuiz('hard')">Hard</button>
+        </div>
+
+        <!-- Quiz Container -->
+        <div id="quizContainer" style="display: none;">
+            <div class="timer" id="timer">Time: 30</div>
+            <div class="question" id="question"></div>
+            <div class="options" id="options"></div>
+            <div class="nav-buttons">
+              <button id="prev" onclick="prevQuestion()">Previous</button>
+              <button id="next" onclick="nextQuestion()">Next</button>
+              <button id="submit" onclick="submitQuiz()" style="display: none;">Submit Quiz</button>
+            </div>
+        </div>
+
+        <!-- Result Section -->
+        <div id="result" class="result" style="display: none;">
+            <p>Your score: <span id="score"></span></p>
+            <p id="feedback"></p>
+            <button id="startBtn" onclick="restartQuiz()">Try Again</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
